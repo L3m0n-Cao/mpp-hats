@@ -15,7 +15,7 @@
 let gModal;
 let currentHat;
 // This URL is the same on every client to prevent evil hatters creating naughty images
-let hatsURL = `https://raw.githubusercontent.com/the-dev-channel/mpp-hats/main/export`;
+let hatsURL = `https://raw.githubusercontent.com/L3m0n-Cao/mpp-hats/main/export`;
 
 function modalHandleEsc(evt) {
     if (evt.key == 'Escape') {
@@ -120,7 +120,7 @@ class Hat {
 }
 
 function registerHats() {
-    fetch('https://raw.githubusercontent.com/the-dev-channel/mpp-hats/main/hats.json').then(d => {return d.json()}).then(hatList => {
+    fetch('https://raw.githubusercontent.com/L3m0n-Cao/mpp-hats/main/hats.json').then(d => {return d.json()}).then(hatList => {
         for (let hat_id of Object.keys(hatList)) {
             let hat = new Hat(hat_id, hatList[hat_id]);
             let opt = `<option value="${hat.id}">${hat.name}</option>`;
@@ -139,7 +139,7 @@ HatE.on('update hat', (p, url) => {
         let top = '-8px';
         let left = '4px';
 
-        // url = url || `https://raw.githubusercontent.com/the-dev-channel/mpp-hats/main/export/santa.png`;
+        // url = url || `https://raw.githubusercontent.com/L3m0n-Cao/mpp-hats/main/export/santa.png`;
         url = `${hatsURL}/${url}.png`;
 
         if (typeof MPP.client.channel.crown !== 'undefined') {
